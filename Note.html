@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Açılır Kapaklı Defter</title>
+<style>
+  body {
+    /* background: #edc3c3; */
+    color: #161515;
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .main-content {
+
+    margin: 5em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    text-transform: capitalize;
+    border: #161515;
+  }
+  
+  h1 {
+    width: 100%;
+    margin: 0 auto 1.5em;
+    font-size: 30px;
+  }
+  h1 small {
+    text-transform: none;
+    display: block;
+    margin: 20px 0;
+    font: 300 20px "QuickSand", sans-serif;
+    color: #999;
+  }
+  
+  .moleskine-wrapper {
+    max-width: calc(100% / 80);
+    min-width: 10em;
+  }
+  
+  .moleskine-notebook {
+    height: 250px;
+    width: 175px;
+    position: relative;
+    transition: 0.4s ease-in-out;
+    border-radius: 5px 15px 15px 5px;
+    transform-origin: left center 0px;
+    display: inline-block;
+    margin: 30px;
+    perspective: 800px;
+  }
+  .moleskine-notebook:hover {
+    transform: rotateZ(-1deg);
+  }
+  .moleskine-notebook:hover .notebook-cover {
+    transform: rotateY(-180deg);
+    z-index: 999;
+    box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.2);
+  }
+  
+  .notebook-cover {
+    background: #cc4b48;
+    height: 250px;
+    width: 175px;
+    position: absolute;
+    border-radius: 5px 15px 15px 5px;
+    z-index: 10;
+    transition: 0.5s linear;
+    transform-style: preserve-3d;
+    transform-origin: left center 0px;
+  }
+  .notebook-cover:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: calc(100% + 2px);
+    top: -1px;
+    z-index: 100;
+    border-radius: 2px;
+    right: 25px;
+    transition: 2s ease;
+    background: linear-gradient(to right, #9c2e2b 0%, #cc4b48 12%, #9c2e2b 25%, #cc4b48 37%, #9c2e2b 50%, #cc4b48 62%, #9c2e2b 75%, #cc4b48 87%, #9c2e2b 100%);
+  }
+  
+  .notebook-skin {
+    height: 50px;
+    background: #e8e8e0;
+    margin-top: 80px;
+    padding: 15px;
+    font-size: 12px;
+    position: relative;
+    z-index: 10;
+    color: #222;
+    text-align: left;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  .notebook-skin:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    left: 0;
+    bottom: 0;
+    background: #cddc39;
+  }
+  
+  .notebook-page {
+    height: 100%;
+    width: 175px;
+    position: absolute;
+    background-color: #fbfae8;
+    z-index: 0;
+    border-radius: 5px 16px 16px 5px;
+    overflow: hidden;
+  }
+  .notebook-page.ruled {
+    background: linear-gradient(to bottom, #fbfae8 9px, #e4e4e4 1px);
+    background-size: 100% 10px;
+  }
+  .notebook-page.squared {
+    background-image: linear-gradient(#e4e4e4 1px, transparent 1px), linear-gradient(90deg, #e4e4e4 1px, transparent 1px);
+    background-size: 10px 10px, 10px 10px, 2px 2px, 2px 2px;
+  }
+  .notebook-page.dotted {
+    background: linear-gradient(90deg, #fbfae8 10px, transparent 1%) center, linear-gradient(#fbfae8 10px, transparent 1%) center, #999;
+    background-size: 11px 11px;
+  }
+  
+  footer {
+    text-align: center;
+    margin: 8em auto;
+    width: 100%;
+  }
+  footer a {
+    text-decoration: none;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px dashed #fff;
+    color: #fff;
+    margin: 5px;
+  }
+  footer a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  footer a .icons {
+    margin-top: 12px;
+    display: inline-block;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="main-content">
+  <div class="moleskine-wrapper">
+    <div class="moleskine-notebook">
+      <div class="notebook-cover">
+        <div class="notebook-skin">NotePad</div>
+      </div>
+      <div class="notebook-page">
+        <div style="background-color: #9c2e2b;"><h4>~Plan~</h4></div>
+        <div style="color: black; font-size: 12px;font-family: cursive;list-style-position: inside; text-align: center; ">
+            <nav style="text-align: center; margin-right: 75px;">
+                <ol type="1">
+                    <li>Note 1</li>
+                    <li>Note 2</li>
+                    <li>Note 3</li>
+                    <li>Note 4</li>
+                    <li>Note 5</li>
+                    <li>Note 6</li>
+                    <li>Note 7</li>
+                    <li type="none">
+                        <img style="width: 36px; height: 34px; margin-left: 85px; margin-top: 5px;" src="https://cdn-icons-png.flaticon.com/128/9284/9284011.png">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+      </div>
+    </div>
+    <h4>Plain</h4>
+  </div>
+</div>
+
+</body>
+</html>
